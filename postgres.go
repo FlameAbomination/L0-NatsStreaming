@@ -7,7 +7,7 @@ import (
 	pgx "github.com/jackc/pgx/v5"
 )
 
-// Кэш и mutex для защиты от паралллельной записи в кэш
+// Кэш и mutex для защиты от параллельной записи в кэш
 var mutex sync.Mutex
 var cache map[string]OrderData
 
@@ -48,7 +48,7 @@ func LoadDatabase(conn *pgx.Conn) error {
 
 	for _, item := range items {
 		// OrderUID необходим только для связывания заказа с товаром и т.д.
-		// поэтому его можно удалить перед чтение в кэш
+		// поэтому его можно удалить перед чтением в кэш
 		order := cache[item.OrderUID]
 		item.OrderUID = ""
 		order.Items = append(order.Items, item)
@@ -74,7 +74,7 @@ func LoadDatabase(conn *pgx.Conn) error {
 }
 
 // TODO: изучить возможность использования generic'ов
-// Данные предаются в виде json для унификации входных данных,
+// Данные передаются в виде json для унификации входных данных,
 // так как NATS тоже передаёт данные в json
 func GetAllItems(conn *pgx.Conn) ([]ItemData, error) {
 	var rowSlice []ItemData
