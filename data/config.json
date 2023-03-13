@@ -1,0 +1,15 @@
+{
+    "postgres": {
+        "username": "postgres",
+        "password": "12345678",
+        "address": "localhost",
+        "port": 5432,
+        "database": "Wildberries"
+    },
+    "NATS" : {
+        "cluster": "test-cluster",
+        "subscriber": "subscriber",
+        "publisher": "publisher",
+        "channel": "orders"
+    }
+}
