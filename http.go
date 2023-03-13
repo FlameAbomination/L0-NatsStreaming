@@ -11,7 +11,6 @@ const portNumber = ":8000"
 
 func UIDPage(w http.ResponseWriter, r *http.Request) {
 	// Проверка на то, что длина url равна 19 - длине UID
-	// Решение далеко не лучше, но для учебного задание подойдёт
 	if r.URL.Path != "/" {
 		if len(r.URL.Path[1:]) != 19 || r.Method != "GET" {
 			http.Error(w, "404 not found.", http.StatusNotFound)
