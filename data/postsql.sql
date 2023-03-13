@@ -50,5 +50,5 @@ CREATE TABLE items (
     total_price 		integer, 
     nm_id 				integer, 
     brand 				character varying(20), 
-    status 				integer 
+    status 				integer
 );
